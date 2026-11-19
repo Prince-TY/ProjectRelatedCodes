@@ -1,0 +1,26 @@
+# Private credentials and local configuration
+**/secrets.h
+**/credentials.h
+.env
+.env.*
+
+# Arduino IDE / build output
+build/
+out/
+*.elf
+*.hex
+*.bin
+*.map
+*.o
+*.d
+*.a
+*.so
+*.dll
+*.exe
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
