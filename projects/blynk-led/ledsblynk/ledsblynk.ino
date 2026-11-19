@@ -1,16 +1,9 @@
-
-#define BLYNK_TEMPLATE_ID "TMPL2To6SPO2H"
-#define BLYNK_TEMPLATE_NAME "ESP 32 LED CONTROL"
-#define BLYNK_AUTH_TOKEN "QMFWArMALlYDbicaGtiI6Cf1icheGK4P"
+#include "secrets.h"
 
 #define BLYNK_PRINT Serial
 
 #include <WiFi.h>
 #include <BlynkSimpleEsp32.h>
-
-// Your WiFi credentials
-char ssid[] = "p";
-char pass[] = "pppppppp";
 
 // LED pins
 #define WHITE_LED 22
@@ -70,9 +63,9 @@ void setup()
   Serial.println("ESP32 LED CONTROL STARTING...");
 
   Serial.print("Connecting to WiFi: ");
-  Serial.println(ssid);
+  Serial.println(WIFI_SSID);
 
-  WiFi.begin(ssid, pass);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
   while (WiFi.status() != WL_CONNECTED)
   {
@@ -88,7 +81,7 @@ void setup()
 
   Serial.println("Connecting to Blynk...");
 
-  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+  Blynk.begin(BLYNK_AUTH_TOKEN, WIFI_SSID, WIFI_PASSWORD);
 }
 
 void loop()
